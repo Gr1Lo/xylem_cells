@@ -7,7 +7,7 @@ from keras.layers.merge import concatenate
 from tensorflow.keras.layers import BatchNormalization
 from keras.layers.pooling import MaxPooling2D
 
-from src.inception_resnet_v2 import InceptionResNetV2
+from scr.inception_resnet_v2 import InceptionResNetV2
 from mobile_net_fixed import MobileNet
 from resnet50_fixed import ResNet50
 from params import args
