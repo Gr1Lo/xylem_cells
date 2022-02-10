@@ -7,6 +7,8 @@ import cv2
 import os
 import numpy as np
 from shutil import rmtree
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import ModelCheckpoint
 
 
 def crop_img(train_v, inp_img, out_fold):
