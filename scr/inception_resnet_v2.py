@@ -33,7 +33,7 @@ from keras.layers import Input
 from keras.layers import Lambda
 from keras.layers import MaxPooling2D
 from keras.utils.data_utils import get_file
-from tensorflow.keras.layers import get_source_inputs
+from tensorflow.keras.utils import get_source_inputs
 from keras import backend as K
 
 
