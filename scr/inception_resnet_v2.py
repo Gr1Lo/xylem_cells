@@ -19,7 +19,7 @@ from __future__ import absolute_import
 import warnings
 
 import keras
-from keras.applications import imagenet_utils as i_u
+import keras_applications.imagenet_utils as i_u
 from keras.models import Model
 from keras.layers import Activation
 from keras.layers import AveragePooling2D
