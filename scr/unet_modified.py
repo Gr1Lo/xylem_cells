@@ -8,9 +8,9 @@ from tensorflow.keras.layers import BatchNormalization
 from keras.layers.pooling import MaxPooling2D
 
 from scr.inception_resnet_v2 import InceptionResNetV2
-from mobile_net_fixed import MobileNet
-from resnet50_fixed import ResNet50
-from params import args
+from scr.mobile_net_fixed import MobileNet
+from scr.resnet50_fixed import ResNet50
+from scr.params import args
 from keras.layers import *
 
 
