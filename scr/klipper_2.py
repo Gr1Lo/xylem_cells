@@ -2,10 +2,7 @@ from shutil import rmtree
 import cv2
 import os
 
-if os.path.exists("membrane/membrane/g2_train"):
-  rmtree('membrane/membrane/g2_train') 
 
-os.mkdir('membrane/membrane/g2_train')
 
 def crop_img(train_v, inp_img, out_fold, addd):
 
