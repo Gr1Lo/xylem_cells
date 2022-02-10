@@ -1,6 +1,6 @@
-from model import *
-from data import *
-from unet_modified import *
+from scr.model import *
+from scr.data import *
+from scr.unet_modified import *
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 import cv2
