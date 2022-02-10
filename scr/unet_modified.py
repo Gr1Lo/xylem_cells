@@ -4,7 +4,7 @@ from keras.engine.training import Model
 from keras.layers.convolutional import Conv2D, UpSampling2D, Conv2DTranspose
 from keras.layers.core import Activation, SpatialDropout2D
 from keras.layers.merge import concatenate
-from keras.layers.normalization import BatchNormalization
+from tensorflow.keras.layers.normalization import BatchNormalization
 from keras.layers.pooling import MaxPooling2D
 
 from inception_resnet_v2 import InceptionResNetV2
