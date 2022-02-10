@@ -51,5 +51,3 @@ def crop_img(train_v, inp_img, out_fold, addd):
   cv2.imwrite('imm2_2.png', img2)
   return n_num
 
-NN = crop_img(512, 'p3_2/m2/m2.png', 'membrane/membrane/g2_train', addd = '')
-NN = crop_img(512, 'p3_2/m2/m2c.png', 'membrane/membrane/g2_train', addd = 'c')
