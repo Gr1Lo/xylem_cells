@@ -20,7 +20,6 @@ import warnings
 
 import keras
 from keras.applications import imagenet_utils as i_u
-from i_u import _obtain_input_shape # SAA
 from keras.models import Model
 from keras.layers import Activation
 from keras.layers import AveragePooling2D
@@ -241,7 +240,7 @@ def InceptionResNetV2(include_top=None,
                          ' as true, `classes` should be 1000')
 
     # Determine proper input shape
-    input_shape = _obtain_input_shape(
+    input_shape = i_u._obtain_input_shape(
         input_shape,
         default_size=299,
         min_size=139,
