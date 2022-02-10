@@ -13,12 +13,12 @@ https://github.com/tensorflow/models/tree/master/slim#pre-trained-models
    Residual Connections on Learning](https://arxiv.org/abs/1602.07261)
 
 """
-import keras
 from __future__ import print_function
 from __future__ import absolute_import
 
 import warnings
 
+import keras
 #from keras.applications import imagenet_utils
 from keras_applications.imagenet_utils import _obtain_input_shape # SAA
 from keras.models import Model
