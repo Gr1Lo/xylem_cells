@@ -70,7 +70,7 @@ from keras import constraints
 from keras.utils import conv_utils
 from keras.utils.data_utils import get_file
 from tensorflow.keras.utils import get_source_inputs
-from keras.engine import InputSpec
+from tensorflow.keras.layers import InputSpec
 from keras import backend as K
 from keras.applications import imagenet_utils
 #from keras_applications.imagenet_utils import _obtain_input_shape # SAA
