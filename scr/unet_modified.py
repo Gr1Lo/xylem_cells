@@ -1,5 +1,5 @@
 from keras.applications.vgg16 import VGG16
-from keras.engine.topology import Input
+from tensorflow.keras.layers import Input
 from keras.engine.training import Model
 from keras.layers.convolutional import Conv2D, UpSampling2D, Conv2DTranspose
 from keras.layers.core import Activation, SpatialDropout2D
