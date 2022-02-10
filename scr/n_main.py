@@ -171,3 +171,4 @@ def sta():
 
   #sew_img(512, 'membrane/membrane/im1.png', 'cop_img.png', 'membrane/membrane/g_train')
   sew_img1(512, 'membrane/membrane/im1.png', 'cop_img.png', 'membrane/membrane/g_train',3)
+  return model
