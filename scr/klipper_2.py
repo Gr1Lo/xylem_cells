@@ -26,8 +26,8 @@ def crop_img(train_v, inp_img, out_fold, addd):
     j_b = 0
     for j in range((width//train_v)):
       px = img[i_b:(i+1)*train_v, j_b:(j+1)*train_v]
-      if n_num in [0,2,4,8]:
-        cv2.imwrite(out_fold + '/' +
+      #if n_num in [0,2,4,8]:
+      cv2.imwrite(out_fold + '/' +
                     str(n_num) + addd + '.png', px)
       
       #bottomLeftCornerOfText = ((i+1)*train_v,j_b)
