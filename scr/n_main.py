@@ -151,7 +151,8 @@ def sta():
                       zoom_range=0.01,
                       horizontal_flip=True,
                       fill_mode='nearest')
-  myGene = trainGenerator(2,'membrane/membrane/train','image','label',data_gen_args,save_to_dir = "membrane/membrane/t_train", target_size = (512,512))
+  myGene = trainGenerator(2,'membrane/membrane/train','image','label',data_gen_args,save_to_dir = "membrane/membrane/t_train", target_size = (512,512),
+                         save_to_dir = 'membrane/membrane/train/aug')
 
   #model = unet()
   model = get_unet_inception_resnet_v2(input_shape=(512,512,3))
