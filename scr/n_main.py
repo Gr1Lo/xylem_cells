@@ -165,16 +165,10 @@ def sta():
   model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy'])
   model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
   callbacks = [
-      EarlyStopping(min_delta=0.005, monitor='loss', patience=2, verbose=0),
+      EarlyStopping(min_delta=0.005, monitor='accuracy', patience=4, verbose=0),
       ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
   ]
   model.fit_generator(myGene,steps_per_epoch=100,epochs=200,callbacks=callbacks)
 
-  testGene = testGenerator("membrane/membrane/g_train", num_image = NN, target_size = (512,512,3))
-  results = model.predict_generator(testGene,NN,verbose=1)
-  saveResult("membrane/membrane/g_train",results)
-  saveResult("membrane/membrane",results)
-
-  #sew_img(512, 'membrane/membrane/im1.png', 'cop_img.png', 'membrane/membrane/g_train')
-  sew_img1(512, 'membrane/membrane/im1.png', 'cop_img.png', 'membrane/membrane/g_train',3)
-  return model
+  
+  return model, NN
