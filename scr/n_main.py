@@ -152,12 +152,11 @@ def sta():
                       horizontal_flip=True,
                       fill_mode='nearest')'''
   
-  data_gen_args = dict(rotation_range=0.2,
-                      shear_range=0.2,
+  data_gen_args = dict(rotation_range=180,
                       zoom_range=0.1,
                       horizontal_flip=True,
                       vertical_flip=True,
-                      fill_mode='nearest')
+                      fill_mode='reflect')
   myGene = trainGenerator(2,'membrane/membrane/train','image','label',data_gen_args,save_to_dir = "membrane/membrane/t_train", target_size = (512,512))
 
   #model = unet()
