@@ -144,9 +144,15 @@ def sta():
   #NN = crop_img(512, 'membrane/membrane/im1.png', 'membrane/membrane/g_train')
   NN = crop_img1(512, 'membrane/membrane/im1.png', 'membrane/membrane/g_train',3)
 
-  data_gen_args = dict(rotation_range=0.2,
+  '''data_gen_args = dict(rotation_range=0.2,
                       width_shift_range=0.05,
                       height_shift_range=0.05,
+                      shear_range=0.05,
+                      zoom_range=0.01,
+                      horizontal_flip=True,
+                      fill_mode='nearest')'''
+  
+  data_gen_args = dict(rotation_range=0.2,
                       shear_range=0.05,
                       zoom_range=0.01,
                       horizontal_flip=True,
