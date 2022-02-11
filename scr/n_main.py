@@ -130,7 +130,7 @@ def sew_img1(train_v, inp_img, cop_img, out_fold, s_v):
 
   cv2.imwrite('_2_1_' + str(cop_img), c_m)
 
-def sta():
+def sta(ep_num, step_num):
   if os.path.exists("membrane/membrane/g_train"):
     rmtree('membrane/membrane/g_train') 
 
@@ -168,7 +168,7 @@ def sta():
       EarlyStopping(min_delta=0.005, monitor='accuracy', patience=4, verbose=0),
       ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
   ]
-  model.fit_generator(myGene,steps_per_epoch=100,epochs=200,callbacks=callbacks)
+  model.fit_generator(myGene,steps_per_epoch=step_num,epochs=ep_num,callbacks=callbacks)
 
   
   return model, NN
