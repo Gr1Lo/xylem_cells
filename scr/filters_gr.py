@@ -1,3 +1,7 @@
+import numpy as np
+import warnings
+
+
 # Original work: Copyright (c) 1995-2012 Peter Kovesi pk@peterkovesi.com
 # Modified work: Copyright (c) 2012 Alistair Muldal
 #
@@ -19,9 +23,7 @@
 # out of or in connection with the software or the use or other dealings in the
 # software.
  
-import numpy as np
-import warnings
- 
+
 def anisodiff(img,niter=1,kappa=50,gamma=0.1,step=(1.,1.),option=1,ploton=False):
     """
     Anisotropic diffusion.
