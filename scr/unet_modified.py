@@ -158,8 +158,8 @@ Uses the same preprocessing as in Inception, Xception etc. (imagenet_utils.prepr
 """
 
 
-def get_unet_inception_resnet_v2(input_shape):
-    base_model = InceptionResNetV2(include_top=True, input_shape=input_shape)
+def get_unet_inception_resnet_v2(input_shape, weights='imagenet'):
+    base_model = InceptionResNetV2(include_top=True, input_shape=input_shape, weights=weights)
     conv1 = base_model.get_layer('activation_1').output
     conv2 = base_model.get_layer('activation_4').output
     conv3 = base_model.get_layer('block35_10_ac').output
