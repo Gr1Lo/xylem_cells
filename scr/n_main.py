@@ -152,7 +152,7 @@ def sta(ep_num, step_num):
                       horizontal_flip=True,
                       vertical_flip=True,
                       fill_mode='reflect')
-  myGene = trainGenerator(2,'train','image','label',data_gen_args,save_to_dir = "t_train", target_size = (512,512))
+  myGene = trainGenerator(2,'tr/tr_data/sour','image','label',data_gen_args,save_to_dir = "t_train", target_size = (512,512))
 
   #model = unet()
   model = get_unet_inception_resnet_v2(input_shape=(512,512,3))
