@@ -111,9 +111,9 @@ def masker2(directory_in_str, direct_train_dir):
           ret,img_gg1 = cv2.threshold(g,2,255,cv2.THRESH_BINARY_INV)
           ret,img_rr1 = cv2.threshold(r,2,255,cv2.THRESH_BINARY_INV)'''
 
-          ret,img_bb1 = cv2.threshold(b,2,255,cv2.THRESH_BINARY_INV)
-          ret,img_gg1 = cv2.threshold(g,2,255,cv2.THRESH_BINARY_INV)
-          ret,img_rr1 = cv2.threshold(r,2,255,cv2.THRESH_BINARY_INV)
+          ret,img_bb1 = cv2.threshold(b,12,255,cv2.THRESH_BINARY_INV)
+          ret,img_gg1 = cv2.threshold(g,12,255,cv2.THRESH_BINARY_INV)
+          ret,img_rr1 = cv2.threshold(r,12,255,cv2.THRESH_BINARY_INV)
 
           img_bg1 = cv2.bitwise_and(img_bb1,img_bb1,mask = img_gg1)
           img_bgr1 = cv2.bitwise_and(img_rr1,img_rr1,mask = img_bg1)
