@@ -1,8 +1,11 @@
 import os, rarfile, tarfile, shutil
 
-def ex_tar(t_file):
+def ex_tar(t_file, dst_folder=None):
 	tkk = tarfile.open(t_file)
 	mt = t_file.split(".")[0]
+	if dst_folder != None:
+		mt = dst_folder
+		
 	if os.path.exists(mt):
 	    shutil.rmtree(mt)
 	tkk.extractall(mt)
