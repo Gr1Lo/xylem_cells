@@ -21,7 +21,7 @@ def crop_img(train_v, inp_img, out_fold, addd):
   n_num = 0       
   for file_d in os.listdir(out_fold):
           filename_d = os.fsdecode(file_d)
-          if 'c' not in filename_d:
+          if 'c' in filename_d:
               n_num = n_num + 1
         
   i_b = 0
