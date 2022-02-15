@@ -131,18 +131,13 @@ def sew_img1(train_v, inp_img, cop_img, out_fold, s_v):
   cv2.imwrite('_2_1_' + str(cop_img), c_m)
 
 def sta(ep_num, step_num):
-  if os.path.exists("membrane/membrane/g_train"):
-    rmtree('membrane/membrane/g_train') 
-
-  os.mkdir('membrane/membrane/g_train')
-
-  if os.path.exists("membrane/membrane/t_train"):
-    rmtree('membrane/membrane/t_train') 
+  if os.path.exists("t_train"):
+    rmtree('t_train') 
 
   os.mkdir('membrane/membrane/t_train')
 
   #NN = crop_img(512, 'membrane/membrane/im1.png', 'membrane/membrane/g_train')
-  NN = crop_img1(512, 'membrane/membrane/im1.png', 'membrane/membrane/g_train',3)
+  #NN = crop_img1(512, 'membrane/membrane/im1.png', 'membrane/membrane/g_train',3)
 
   '''data_gen_args = dict(rotation_range=0.2,
                       width_shift_range=0.05,
@@ -157,7 +152,7 @@ def sta(ep_num, step_num):
                       horizontal_flip=True,
                       vertical_flip=True,
                       fill_mode='reflect')
-  myGene = trainGenerator(2,'membrane/membrane/train','image','label',data_gen_args,save_to_dir = "membrane/membrane/t_train", target_size = (512,512))
+  myGene = trainGenerator(2,'train','image','label',data_gen_args,save_to_dir = "t_train", target_size = (512,512))
 
   #model = unet()
   model = get_unet_inception_resnet_v2(input_shape=(512,512,3))
