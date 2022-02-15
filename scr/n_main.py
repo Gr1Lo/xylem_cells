@@ -134,7 +134,7 @@ def sta(ep_num, step_num):
   if os.path.exists("t_train"):
     rmtree('t_train') 
 
-  os.mkdir('membrane/membrane/t_train')
+  os.mkdir('t_train')
 
   #NN = crop_img(512, 'membrane/membrane/im1.png', 'membrane/membrane/g_train')
   #NN = crop_img1(512, 'membrane/membrane/im1.png', 'membrane/membrane/g_train',3)
