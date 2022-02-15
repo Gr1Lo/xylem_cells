@@ -130,7 +130,7 @@ def sew_img1(train_v, inp_img, cop_img, out_fold, s_v):
 
   cv2.imwrite('_2_1_' + str(cop_img), c_m)
 
-def sta(ep_num, step_num):
+def sta(ep_num, step_num, weights='imagenet'):
   if os.path.exists("t_train"):
     rmtree('t_train') 
 
@@ -155,7 +155,7 @@ def sta(ep_num, step_num):
   myGene = trainGenerator(2,'tr/tr_data/sour','image','label',data_gen_args,save_to_dir = "t_train", target_size = (512,512))
 
   #model = unet()
-  model = get_unet_inception_resnet_v2(input_shape=(512,512,3))
+  model = get_unet_inception_resnet_v2(input_shape=(512,512,3),weights=weights)
   print("Compiling Model")
   model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy'])
   model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
@@ -166,4 +166,4 @@ def sta(ep_num, step_num):
   model.fit_generator(myGene,steps_per_epoch=step_num,epochs=ep_num,callbacks=callbacks)
 
   
-  return model, NN
+  return model
