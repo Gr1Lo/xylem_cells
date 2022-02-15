@@ -2,8 +2,6 @@ from shutil import rmtree
 import cv2
 import os
 
-
-
 def crop_img(train_v, inp_img, out_fold, addd):
 
   font                   = cv2.FONT_HERSHEY_SIMPLEX
@@ -20,7 +18,11 @@ def crop_img(train_v, inp_img, out_fold, addd):
   img2 = cv2.imread('imm0.png')
   height, width, channels = img.shape
   print(height, width, channels)
-  n_num = 0
+  n_num = 0       
+  for file_d in os.listdir(out_fold):
+          filename_d = os.fsdecode(file_d)
+          n_num = n_num + 1
+        
   i_b = 0
   for i in range((height//train_v)):
     j_b = 0
@@ -45,6 +47,5 @@ def crop_img(train_v, inp_img, out_fold, addd):
 
     i_b = i_b + train_v
 
-  cv2.imwrite('imm2_2.png', img2)
   return n_num
 
