@@ -120,18 +120,18 @@ def sew_img1(train_v, inp_img, out_fold, NN, s_v=0):
     j_b = 0
     for j in range(width//r_v):
       print(n_num)
-      if n_num < 90:
+      if n_num < NN:
         img_ii = cv2.imread(out_fold + '/' + str(n_num) + '_predict.png')
         height1, width1, channels1 = img_ii.shape
-        c_m[i_b:(i+1)*train_v, j_b:(j+1)*train_v] = img_ii[s_v:height1-s_v, s_v:width1-s_v]
+        c_m[i_b:(i+1)*r_v, j_b:(j+1)*r_v] = img_ii[s_v:height1-s_v, s_v:width1-s_v]
 
-        j_b = j_b + train_v
+        j_b = j_b + r_v
       n_num = n_num + 1
 
-    i_b = i_b + train_v
+    i_b = i_b + r_v
 
   c_m1 = c_m[train_v-1:train_v-1+height0, train_v-1:train_v-1+width0]
-  cv2.imwrite('_2_1_' + 'cop_img.png', c_m1)
+  cv2.imwrite('_2_1_1' + 'cop_img.png', c_m1)
 
 def sta(ep_num, step_num, weights='imagenet'):
   if os.path.exists("t_train"):
