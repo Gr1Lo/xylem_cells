@@ -103,7 +103,7 @@ def crop_img1(train_v, inp_img, out_fold, s_v):
 
 
 
-def sew_img1(train_v, inp_img, out_fold, NN, s_v=0):
+def sew_img1(train_v, inp_img, inp_fold, out_img, NN, s_v=0):
 
   r_v = train_v-s_v*2
 
@@ -121,7 +121,7 @@ def sew_img1(train_v, inp_img, out_fold, NN, s_v=0):
     for j in range(width//r_v):
       print(n_num)
       if n_num < NN:
-        img_ii = cv2.imread(out_fold + '/' + str(n_num) + '_predict.png')
+        img_ii = cv2.imread(inp_fold + '/' + str(n_num) + '_predict.png')
         height1, width1, channels1 = img_ii.shape
         c_m[i_b:(i+1)*r_v, j_b:(j+1)*r_v] = img_ii[s_v:height1-s_v, s_v:width1-s_v]
 
@@ -131,7 +131,7 @@ def sew_img1(train_v, inp_img, out_fold, NN, s_v=0):
     i_b = i_b + r_v
 
   c_m1 = c_m[train_v-1:train_v-1+height0, train_v-1:train_v-1+width0]
-  cv2.imwrite('_2_1_1' + 'cop_img.png', c_m1)
+  cv2.imwrite(out_img, c_m1)
 
 def sta(ep_num, step_num, weights='imagenet'):
   if os.path.exists("t_train"):
